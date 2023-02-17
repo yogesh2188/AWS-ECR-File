@@ -46,15 +46,15 @@ pipeline {
         // Stopping Docker containers for cleaner Docker run
        stage('stop previous containers') {
           steps {
-            sh 'docker ps -f name=mypythonContainer_new_test112112 -q | xargs --no-run-if-empty docker container stop'
-            sh 'docker container ls -a -fname=mypythonContainer_new_test112112 -q | xargs -r docker container rm'
+            sh 'docker ps -f name=mypythonContainer_new_test1 -q | xargs --no-run-if-empty docker container stop'
+            sh 'docker container ls -a -fname=mypythonContainer_new_test1 -q | xargs -r docker container rm'
            }
         }
         
         stage('Docker Run') {
           steps{
              script {
-                sh 'docker run -d -p 8097:8080 --rm --name mypythonContainer_new_test112112 public.ecr.aws/t9h4g4g8/ecr_repo:latest'
+                sh 'docker run -d -p 8097:8080 --rm --name mypythonContainer_new_test1 public.ecr.aws/t9h4g4g8/ecr_repo:latest'
               }
             }
         }
