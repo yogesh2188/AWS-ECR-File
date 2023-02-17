@@ -9,7 +9,7 @@ pipeline {
    stages {
         stage('Cloning Github project/source code') {
             steps {
-                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/yogesh2188/AWS-ECR-File.git']]])
+                checkout([$class: 'GitSCM', branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[url:'https://github.com/yogesh2188/AWS-ECR-File.git']]])
             }
         }
         
